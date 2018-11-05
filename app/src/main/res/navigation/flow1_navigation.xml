@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/flow1_navigation"
+            app:startDestination="@id/flow1Fragment">
+
+
+    <fragment android:id="@+id/flow1Fragment" android:name="com.camachoyury.navigationdemo.flow1.Flow1Fragment"
+              android:label="fragment_flow1" tools:layout="@layout/fragment_flow1">
+
+        <action android:id="@+id/action_flow1Fragment_to_flow1Fragment2" app:destination="@id/flow1Fragment2"/>
+
+    </fragment>
+    <fragment android:id="@+id/flow1Fragment2" android:name="com.camachoyury.navigationdemo.flow1.Flow1Fragment2"
+              android:label="fragment_flow1_fragment2" tools:layout="@layout/fragment_flow1_fragment2">
+        <deepLink android:id="@+id/deepLink" app:uri="www.navigationdemo.com/{message}"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation"
+            app:startDestination="@id/home_fragment">
+
+    <fragment android:id="@+id/home_fragment"
+              android:name="com.camachoyury.navigationdemo.flow0.HomeFragment"
+              android:label="HomeFragment"
+              tools:layout="@layout/home_fragment">
+        <action android:id="@+id/action_home_fragment_to_detail_fragment"
+                app:destination="@id/detailFragment"/>
+    </fragment>
+    <fragment android:id="@+id/item_list_fragment"
+              android:name="com.camachoyury.navigationdemo.flow0.ItemListFragment"
+              android:label="fragment_item_list"
+              tools:layout="@layout/fragment_item_list">
+        <action android:id="@+id/action_item_list_fragment_to_main2Activity" app:destination="@id/main2Activity"/>
+    </fragment>
+    <fragment android:id="@+id/account_fragment"
+              android:name="com.camachoyury.navigationdemo.flow0.AccountFragment"
+              android:label="fragment_account"
+              tools:layout="@layout/fragment_account">
+        <action android:id="@+id/action_account_fragment_to_flow1_navigation2" app:destination="@id/flow1_navigation"/>
+        <action android:id="@+id/action_account_fragment_to_flow1_navigation3" app:destination="@id/flow1_navigation"/>
+    </fragment>
+    <fragment android:id="@+id/detailFragment"
+              android:name="com.camachoyury.navigationdemo.flow0.DetailFragment"
+              android:label="fragment_detail"
+              tools:layout="@layout/fragment_detail"/>
+    <include app:graph="@navigation/flow1_navigation"/>
+    <activity android:id="@+id/main2Activity" android:name="com.camachoyury.navigationdemo.Main2Activity"
+              android:label="activity_main2" tools:layout="@layout/activity_main2"/>
+</navigation>
